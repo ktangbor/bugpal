@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "bugpal_app"
+version = "0.1.0"
+description = ""
+authors = ["ktangbor <konnosnikolopoulos@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.2"
+sqlalchemy = "^2.0.40"
+psycopg2-binary = "^2.9.10"
+alembic = "^1.15.2"
+pydantic = "^2.11.4"
+asyncpg = "^0.30.0"
+python-dotenv = "^1.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pytest-asyncio = "^0.26.0"
+httpx = "^0.28.1"
+black = "^25.1.0"
+isort = "^6.0.1"
+
+[tool.poetry.scripts]
+migrate = "alembic revision --autogenerate -m 'Initial migration'"
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
