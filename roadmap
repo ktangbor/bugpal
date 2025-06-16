@@ -1,0 +1,116 @@
+Implement CRUD Operations:
+Start writing the CRUD logic in crud.py. This will include:
+
+Creating issues.
+
+Submitting fixes.
+
+Upvoting/downvoting.
+
+Create Business Logic:
+Services in services.py will handle things like:
+
+User reputation management.
+
+Fix matchmaking based on relevance or popularity.
+
+State transitions (Open → In Progress → Solved).
+
+Setup Background Tasks:
+Implement notification handling using FastAPI’s background tasks or Celery for tasks like:
+
+Notify users when a fix is posted.
+
+Notify when an issue reaches a solved state.
+
+Design Patterns:
+As you progress, incorporate design patterns:
+
+Factory Pattern to create different types of fixes.
+
+Observer Pattern for notifications.
+
+Strategy Pattern for varying matching algorithms.
+
+Repository Pattern for clean database access.
+
+Testing:
+Write tests in the tests/ directory. Make sure to cover:
+
+User registration.
+
+Issue posting.
+
+Fix proposal and voting.
+
+
+---------------------------------------------------------------------------
+
+
+Approximate Timeline for BugPal:
+Day 1: Project Setup (Poetry, FastAPI, Folder Structure)
+Set up FastAPI, Poetry, and the base structure.
+
+Implement the basic health check route.
+
+Initialize version control and standard dev tools (black, isort, pytest).
+
+Time Estimate: 1 day
+
+Day 2: Database Configuration, Alembic, and Basic Models
+Set up SQLAlchemy models (User, Issue, etc.).
+
+Configure Alembic for migrations.
+
+Implement the database session management and dependency injection.
+
+Create a couple of simple CRUD endpoints (like POST for user creation).
+
+Time Estimate: 1 day
+
+Day 3: Core Features (CRUD for Issues, Fixes, and Voting)
+Implement the CRUD operations for issues and fixes.
+
+Set up relationships between issues and fixes, and create endpoints to post fixes.
+
+Implement voting for fixes.
+
+Focus on making the code modular (use design patterns like Repository, Strategy, etc.).
+
+Time Estimate: 2 days
+
+Day 4: User Management, Reputation, and Authentication
+Add user registration and authentication (JWT token).
+
+Implement user reputation logic (users earn reputation for posting fixes, etc.).
+
+Create routes for user profile, reputation, and authentication.
+
+Time Estimate: 2 days
+
+Day 5: Background Tasks and Notifications
+Implement background tasks for sending notifications (using FastAPI background tasks or Celery).
+
+Set up email or push notifications for new fixes, issue updates, and votes.
+
+Time Estimate: 1 day
+
+Day 6: Admin Panel and Moderation
+Create an admin panel with routes for moderating user activity.
+
+Implement features like flagging inappropriate content and banning users.
+
+Admins should also be able to mark issues as "solved."
+
+Time Estimate: 1 day
+
+Day 7: Testing, Documentation, and Cleanup
+Write comprehensive tests for routes, models, and background tasks.
+
+Ensure that the app is well-documented with OpenAPI.
+
+Refactor code for clarity and modularity.
+
+Time Estimate: 1–2 days
+
+Total Estimate: 8–10 days

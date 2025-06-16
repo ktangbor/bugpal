@@ -11,3 +11,7 @@ class User(Base):
     reputation = Column(Integer, default=0)
 
     issues = relationship("Issue", back_populates="user")
+    fixes = relationship("Fix", back_populates="user",
+                         cascade="all, delete")
+    votes = relationship("Vote", back_populates="user",
+                         cascade="all, delete")

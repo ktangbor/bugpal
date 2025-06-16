@@ -3,7 +3,7 @@ from logging.config import fileConfig
 from sqlalchemy import engine_from_config, pool
 
 from alembic import context
-
+from bugpal_app.core.config import settings
 from bugpal_app.db.session import Base
 from bugpal_app.models import user, issue
 
@@ -11,6 +11,9 @@ from bugpal_app.models import user, issue
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+
+# Override alembic.ini with the .env URL
+config.set_main_option("sqlalchemy.url", settings.DB_URL)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

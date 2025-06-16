@@ -1,0 +1,9 @@
+curl -X 'POST' \
+  'http://localhost:8000/users/create' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "username": "john_doe",
+  "email": "john.doe@example.com"
+}'
+

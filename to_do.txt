@@ -1,0 +1,26 @@
+poetry add fastapi uvicorn sqlalchemy psycopg2-binary alembic pydantic
+poetry add --group dev pytest pytest-asyncio httpx black isort
+poetry add asyncpg
+poetry run uvicorn bugpal_app.main:app --reload
+poetry add alembic
+poetry run alembic init alembic
+poetry run black .
+poetry run isort .
+
+docker ps
+docker exec -it bugpal_db_1 bash
+psql -U your_db_user -d your_db_name
+\dt
+\d users
+\q
+exit
+
+- scripts for
+    - fastapi start
+    - alembic migrations
+        poetry run alembic revision --autogenerate -m "Initial migration"
+        poetry run alembic upgrade head
+    - posrtgreSQL start
+        docker-compose up -d
+        docker-compose down
+-
